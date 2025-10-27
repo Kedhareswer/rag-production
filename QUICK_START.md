@@ -3,11 +3,13 @@
 ## Get Started in 3 Steps!
 
 ### Step 1: Install
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### Step 2: Configure
+
 ```bash
 cp .env.example .env
 # Edit .env and add your GROQ_API_KEY from https://console.groq.com/
@@ -16,17 +18,21 @@ cp .env.example .env
 ### Step 3: Run!
 
 **Option A: Web Interface (Easiest!)**
+
 ```bash
 python api.py
 ```
+
 Then open: http://localhost:8000
 
 **Option B: Command Line**
+
 ```bash
 python examples/test_rag.py
 ```
 
 **Option C: Interactive Mode**
+
 ```bash
 python examples/interactive.py
 ```
@@ -34,11 +40,13 @@ python examples/interactive.py
 ## 🌐 Web Interface (Recommended!)
 
 ### Start the Server
+
 ```bash
 python api.py
 ```
 
 You'll see:
+
 ```
 🚀 Starting Docling RAG API Server
 📚 API Documentation: http://localhost:8000/docs
@@ -46,16 +54,20 @@ You'll see:
 ```
 
 ### Access the System
+
 - **Web UI**: http://localhost:8000
 - **API Docs**: http://localhost:8000/docs
 
 ### Use the Web Interface
+
 1. **Upload Documents**
+
    - Click or drag files to upload area
    - Supports: PDF, DOCX, XLSX, PPTX, images, Markdown, HTML, CSV
    - See processing status in real-time
 
 2. **Ask Questions**
+
    - Type your question in the text box
    - Press Enter or click "Ask"
    - See answer with similarity scores
@@ -69,20 +81,24 @@ You'll see:
 ## 💻 Command Line Usage
 
 ### Quick Test
+
 ```bash
 python examples/test_rag.py
 ```
+
 - Auto-discovers all files in `docs/` folder
 - Processes and ingests them
 - Runs test queries
 - Shows detailed metrics
 
 ### Interactive Mode
+
 ```bash
 python examples/interactive.py
 ```
 
 Commands:
+
 - `ingest all` - Process all files in docs/ folder
 - `ingest filename.pdf` - Process specific file
 - Type your question - Get answer
@@ -90,9 +106,11 @@ Commands:
 - `quit` - Exit
 
 ### Basic Usage
+
 ```bash
 python examples/basic_usage.py
 ```
+
 - Demonstrates complete workflow
 - Shows API usage
 - Educational example
@@ -100,6 +118,7 @@ python examples/basic_usage.py
 ## 🐍 Python API
 
 ### Quick Example
+
 ```python
 from main import DoclingRAGSystem
 
@@ -115,6 +134,7 @@ print(result["answer"])
 ```
 
 ### With Metrics
+
 ```python
 result = rag.query("Your question?")
 
@@ -129,6 +149,7 @@ for source in result['sources'][:3]:
 ```
 
 ### Specific Files
+
 ```python
 # Process specific files
 rag.ingest_documents([
@@ -141,6 +162,7 @@ rag.ingest_documents([
 ## 🌐 REST API
 
 ### Upload Document
+
 ```python
 import requests
 
@@ -151,6 +173,7 @@ with open('document.pdf', 'rb') as f:
 ```
 
 ### Ask Question
+
 ```python
 import requests
 
@@ -166,6 +189,7 @@ print(f"Similarity: {result['metrics']['average_similarity']:.1%}")
 ```
 
 ### Check Status
+
 ```python
 import requests
 
@@ -179,6 +203,7 @@ print(f"Documents: {status['documents_count']}")
 ## 📁 Supported Formats
 
 ### Documents
+
 - ✅ PDF (with tables and layout)
 - ✅ DOCX, XLSX, PPTX, PPT
 - ✅ Markdown (.md)
@@ -186,6 +211,7 @@ print(f"Documents: {status['documents_count']}")
 - ✅ CSV files
 
 ### Images (with OCR)
+
 - ✅ PNG, JPEG, TIFF, BMP, WEBP
 - ✅ Scanned documents
 - ✅ Screenshots
@@ -193,6 +219,7 @@ print(f"Documents: {status['documents_count']}")
 ## ⚙️ Configuration
 
 ### Environment Variables (.env)
+
 ```env
 # Required
 GROQ_API_KEY=your_key_here
@@ -205,6 +232,7 @@ CHUNK_OVERLAP=128
 ```
 
 ### Available Models
+
 - `llama-3.3-70b-versatile` (default, best)
 - `llama-3.1-70b-versatile` (alternative)
 - `llama-3.1-8b-instant` (faster)
@@ -213,12 +241,14 @@ CHUNK_OVERLAP=128
 ## 🔧 Troubleshooting
 
 ### "GROQ_API_KEY is required"
+
 ```bash
 cp .env.example .env
 # Edit .env and add your key
 ```
 
 ### "No documents found"
+
 ```bash
 # Add files to docs/ folder
 mkdir docs
@@ -226,11 +256,13 @@ cp your_files/* docs/
 ```
 
 ### Slow first run
+
 - Normal! Downloads models (~500MB)
 - Subsequent runs are fast
 - Models cached locally
 
 ### Web server won't start
+
 ```bash
 pip install fastapi uvicorn python-multipart
 ```
@@ -238,6 +270,7 @@ pip install fastapi uvicorn python-multipart
 ## 📊 What to Expect
 
 ### Document Processing
+
 ```
 📄 Processing: document.pdf
    Format: .pdf
@@ -251,6 +284,7 @@ pip install fastapi uvicorn python-multipart
 ```
 
 ### Chunking
+
 ```
 ✂️  Chunking Document
 
@@ -265,6 +299,7 @@ pip install fastapi uvicorn python-multipart
 ```
 
 ### Query Results
+
 ```
 🔍 Retrieval Phase
    Retrieved chunks: 10
@@ -287,22 +322,26 @@ pip install fastapi uvicorn python-multipart
 ## 🎯 Next Steps
 
 ### 1. Try the Web Interface
+
 ```bash
 python api.py
 # Open http://localhost:8000
 ```
 
 ### 2. Upload Your Documents
+
 - Drag & drop files
 - Or use API to upload
 - Supports all formats
 
 ### 3. Ask Questions
+
 - Type naturally
 - See detailed metrics
 - Check similarity scores
 
 ### 4. Integrate
+
 - Use REST API
 - Build web apps
 - Create chatbots
@@ -318,6 +357,7 @@ python api.py
 ## 🎉 You're Ready!
 
 Your RAG system is now:
+
 - ✅ Installed and configured
 - ✅ Ready to process documents
 - ✅ Ready to answer questions
@@ -325,6 +365,7 @@ Your RAG system is now:
 - ✅ Accessible via REST API
 
 **Start now:**
+
 ```bash
 python api.py
 ```

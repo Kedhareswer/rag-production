@@ -322,10 +322,13 @@ if __name__ == "__main__":
     print("   • Documents: GET http://localhost:8000/documents")
     print("\n" + "="*70 + "\n")
     
+    # Get port from environment variable (for deployment) or use 8000 for local
+    port = int(os.getenv("PORT", 8000))
+    
     uvicorn.run(
         "api:app",
         host="0.0.0.0",
-        port=8000,
-        reload=True,  # Auto-reload on code changes
+        port=port,
+        reload=False,  # Disable reload in production
         log_level="info"
     )
