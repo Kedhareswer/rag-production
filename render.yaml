@@ -4,12 +4,10 @@ services:
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn api:app --host 0.0.0.0 --port 10000
+    startCommand: python api.py
     healthCheckPath: /health
     envVars:
       - key: GROQ_API_KEY
         sync: false
       - key: PYTHON_VERSION
         value: 3.11.0
-      - key: PORT
-        value: 10000
