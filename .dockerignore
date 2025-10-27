@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Environment
+.env
+*.env
+!.env.example
+
+# Data
+vector_db/
+docs/*.pdf
+docs/*.docx
+docs/*.xlsx
+docs/*.pptx
+docs/*.png
+docs/*.jpg
+docs/*.jpeg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation (optional, include if you want)
+# *.md
+
+# Tests
+tests/
+test_*.py
+*_test.py

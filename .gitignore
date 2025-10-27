@@ -1,0 +1,80 @@
+# Environment
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Vector DB
+vector_db/
+*.db
+
+# Docling models
+docling_models/
+.cache/
+
+# PyTorch and HuggingFace caches
+.torch/
+.huggingface/
+*.pt
+*.bin
+
+# Documents (don't commit user documents)
+docs/*.pdf
+docs/*.docx
+docs/*.xlsx
+docs/*.pptx
+docs/*.ppt
+docs/*.png
+docs/*.jpg
+docs/*.jpeg
+docs/*.tiff
+docs/*.bmp
+docs/*.webp
+docs/*.md
+docs/*.html
+docs/*.csv
+
+# Keep docs folder structure
+!docs/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Deployment
+.vercel/
+.railway/
